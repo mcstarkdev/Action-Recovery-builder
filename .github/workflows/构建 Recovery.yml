@@ -36,7 +36,7 @@ on:
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_nx531j'
+        default: 'omni_nx531j'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
