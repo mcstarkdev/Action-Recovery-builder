@@ -107,12 +107,13 @@ jobs:
         echo "::set-output name=pwd::$(pwd)"
         git config --global user.name "Captain Throwback"
         git config --global user.email "captainthrowback@hotmail.com"
-        repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
+        git clone https://gitlab.com/OrangeFox/sync ./
+        bash ./orangefox_sync.sh --branch 9.0 --path ./
       id: pwd
           
     - name: Repo Sync
       run: |
-        repo sync -j$(nproc --all) --force-sync
+        ls
       working-directory: workspace
       
     - name: Clone device tree
